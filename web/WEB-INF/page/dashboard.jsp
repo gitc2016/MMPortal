@@ -92,7 +92,45 @@
                         You haven't connected with any mentors yet. <a href="/people/search/mentors"
                                                                        class="btn btn-primary btn-md pull-right dashboard-button"
                                                                        style="margin-top: -7px;">Search for
-                            Mentors</a></div>
+                            Mentors</a>
+                    </div>
+                    <%--else--%>
+                    <%--iterator--%>
+                    <div class="mm-wgt panel panel-default pos-relative">
+
+                        <div class="panel-body media ">
+                            <div class="pull-left">
+                                <a href="/members/user-profile/210533/type:mentor/type:default"
+                                   title="View Ruben Sharyan's Profile">
+                                    <img class="profile-pic img-circle" src="/images/MPLogo120.png"
+                                         alt="Ruben Sharyan"/>
+                                </a></div>
+                            <div class="media-body">
+
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <strong><a href="/members/user-profile/210533/type:mentor">Ruben
+                                            Sharyan</a></strong><br/>
+
+                                        12/14/2016<br/>
+                                        mentor<br/>
+                                    </div>
+                                    <div class="col-sm-9">
+                                        <a href="/conversations/ask-for-help/210533"
+                                           class="btn btn-primary pull-right hidden-xs">View</a>
+                                        <div class="col-sm-8">
+                                            <div>
+                                                <p>fghjkl;</p></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 visible-xs">
+                                        <a href="/conversations/ask-for-help/210533" class="btn btn-primary">View</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <%----%>
                 </div>
             </div>
         </div>
