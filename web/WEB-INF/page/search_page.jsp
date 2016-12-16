@@ -7,8 +7,12 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
-<h4>Search mentor</h4>
+<s:if test="%{searchStatus}">
+<h4>SEARCH MENTOR</h4>
+    </s:if>
+<s:elseif test="%{!searchStatus}">
+<h4>SEARCH MENTEE</h4>
+</s:elseif>
 <div id="search-container" class="container">
     <div class="panel">
         <div class="panel-body">
@@ -40,19 +44,19 @@
         </div>
     </div>
 </div>
+<%--iterator--%>
+<s:iterator value="userStatusList">
 <div class="card col-sm-6 col-lg-4 ">
     <div class="mm-wgt panel panel-default with-button">
-
-
         <div class="panel-footer clearfix media">
             <div class="pull-left">
                 <a href="/members/user-profile/209306/type:mentor"
-                   title="View Valerio Zanini's Profile">
-                    <img class="profile-pic img-circle" src="/images/MPLogo120.png" alt="Valerio Zanini"/>
+                   title="<s:property value="name"/><s:property value="surname"/>">
+                    <img class="profile-pic img-circle" src="/images/MPLogo120.png" alt="<s:property value="name"/>"/>
                 </a></div>
             <div class="media-body">
                 <p class="user-name">
-                    <a href="/members/user-profile/209306/type:mentor">Valerio Zanini</a></p>
+                    <a href="/members/user-profile/209306/type:mentor"><s:property value="name"/><s:property value="surname"/></a></p>
 
 
                 <p class="user-info">
@@ -66,8 +70,6 @@
                 </p>
                 <hr/>
             </div><!-- end .media-body -->
-
-
         </div> <!-- end dashboard's .clearfix or footer_class or .affinity-bar -->
 
 
@@ -87,5 +89,4 @@
                 class="glyphicon glyphicon-circle-arrow-right"></span></a></div> <!-- .mm-wgt .panel -->
 </div>
 
-
-
+</s:iterator>

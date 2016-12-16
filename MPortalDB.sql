@@ -132,6 +132,7 @@ CREATE TABLE `user` (
   `imageSRC` VARCHAR(255) DEFAULT NULL,
   `hashcode` VARCHAR(255) NOT NULL,
   `isAvailable` TINYINT(1) NOT NULL DEFAULT '0',
+  status ENUM('MENTEE','MENTOR'),
   PRIMARY KEY (`id`),
   KEY `country_id` (`country_id`),
   CONSTRAINT `user_ibfk_3` FOREIGN KEY (`country_id`) REFERENCES `country` (`id`)

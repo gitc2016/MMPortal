@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: levon
@@ -28,7 +29,7 @@
                         <div class="media-body">
                             <%--username--%>
                             <p class="user-name">
-                                <a href="#">Levon Aloyan</a></p>
+                                <a href="#"><s:property value="user.name"/> <s:property value="user.surname"/></a></p>
                                 <hr/>
                             <%--Country--%>
                             <p class="user-info">

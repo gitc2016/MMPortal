@@ -38,15 +38,15 @@
         <%--</s:form>--%>
 
         <div id="searchList">
-            <s:if test="%{advanceSerachList!=null}">
-                <s:iterator value="advanceSerachList">
+            <s:if test="%{searchList!=null}">
+                <s:iterator value="searchList">
                     <a href="#"><s:property value="name"/><s:property value="surName"/></a>
                     <%--must be if check--%>
                     <a href="request.action?acceptrID=<s:property value="id"/>"><span class="sendRequest badge"> SEND REQUEST</span></a>
                     <br>
                 </s:iterator>
             </s:if>
-            <s:elseif test="%{advanceSerachList==null}">
+            <s:elseif test="%{searchList==null}">
                 <s:iterator value="userList">
                     <a href="#"><s:property value="name"/><s:property value="surName"/></a>
                     <%--must be if check--%>

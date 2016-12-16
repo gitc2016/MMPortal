@@ -196,6 +196,14 @@
             <result name="success" type="tiles">dashboard.view</result>
         </action>
 
+        <action name="mentor" class="am.gitc.mportal.action.SearchAction" method="mentorSearch">
+            <result name="success" type="tiles">search_page.view</result>
+        </action>
+
+        <action name="mentee" class="am.gitc.mportal.action.SearchAction" method="menteeSearch">
+            <result name="success" type="tiles">search_page.view</result>
+        </action>
+
 
     </package>
 

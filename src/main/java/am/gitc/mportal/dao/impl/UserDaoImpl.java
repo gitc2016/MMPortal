@@ -2,6 +2,7 @@ package am.gitc.mportal.dao.impl;
 
 import am.gitc.mportal.dao.UserDao;
 import am.gitc.mportal.domain.MentorCategory;
+import am.gitc.mportal.domain.Status;
 import am.gitc.mportal.domain.User;
 import am.gitc.mportal.util.HibernateUtil;
 import org.hibernate.Criteria;
@@ -69,6 +70,13 @@ public class UserDaoImpl implements UserDao {
 
         return (User) criteria.add(Restrictions.and(Restrictions.eq("email", email), Restrictions.eq("password", password))).uniqueResult();
 
+    }
+
+    @Override
+    public List<User> getUserByStatus(String status) {
+        Criteria criteria = session.createCriteria(User.class);
+        Criterion resualt = Restrictions.eq("status",Status.valueOf(status));
+        return (List<User>) criteria.add(resualt).list();
     }
 
     @Override
