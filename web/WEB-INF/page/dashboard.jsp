@@ -29,13 +29,10 @@
                         <div class="media-body">
                             <%--username--%>
                             <p class="user-name">
-<<<<<<< HEAD
-                                <a href="#"><s:property value="user.name"/> <s:property value="user.surname"/></a></p>
-                                <hr/>
-=======
+
                                 <a href="#"><s:property value="user.name"/>  <s:property value="user.surname"/></a></p>
                             <hr/>
->>>>>>> 75d5562fcf1814c2b9c480040d12dc942d2446d5
+
                             <%--Country--%>
                             <%--<p class="user-info">--%>
                                 <%--<small>--%>

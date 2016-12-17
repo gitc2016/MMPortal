@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="MySQL - mportaldb@localhost" uuid="0cdf208f-2cea-4c5c-82b3-061f829230a4">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
-      <secret-storage>memory</secret-storage>
+    <data-source name="MySQL - MPortalDB@localhost" uuid="0cdf208f-2cea-4c5c-82b3-061f829230a4">
+      <user-name>root</user-name>
+      <user-password>dfcbdfd9dfcedfcc</user-password>
     </data-source>
   </component>
 </project>
