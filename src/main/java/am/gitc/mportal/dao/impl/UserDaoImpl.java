@@ -79,14 +79,13 @@ public class UserDaoImpl implements UserDao {
         return (List<User>) criteria.add(resualt).list();
     }
 
-    @Override
-    public List<User> getSearchUserListByName(String name) {
+    public List<User> getSearchUserListByName(String name,String status,int categoryId) {
         Criteria criteria = session.createCriteria(User.class);
         Criterion result = Restrictions.like("name", name + "%");
         return (List<User>) criteria.add(result).list();
-//        SQLQuery query = session.createSQLQuery
-//                ("SELECT us.`name` FROM mentor_category INNER JOIN `user` as us ON mentor_category.`user_id` = us.id where us.name LIKE '"+name+"%"+"'");
-//        return sqlQuery.list();
+
+//        return session.createCriteria(User.class).add(Restrictions.or(Restrictions.like("name",name+"%"),Restrictions.like("status",status)));
+
     }
 
     public User getUserByHashCode(String hashCode) throws Exception {//TODO think about better way to generate link for useractiovation
@@ -99,5 +98,8 @@ public class UserDaoImpl implements UserDao {
         return (User) session.createCriteria(User.class).add(Restrictions.and(Restrictions.eq("id", id), Restrictions.like("name", name + "%"))).uniqueResult();
     }
 
-
+    @Override
+    public List<User> getSearchUserListByName(String name) {
+        return null;
+    }
 }

@@ -96,6 +96,12 @@ public class SearchAction extends GlobalAction implements ApplicationAware {
     }
 
     @SkipValidation
+    public String subCategorySearch()throws Exception{
+
+        return SUCCESS;
+    }
+
+    @SkipValidation
     public String advancedSearch() throws Exception{
         int sessionUserId = (Integer) mapSession.get(Global_Keys.LOGIN);
         searchList = new ArrayList<User>();

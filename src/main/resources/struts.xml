@@ -204,8 +204,13 @@
             <result name="success" type="tiles">search_page.view</result>
         </action>
 
+        <action name="searchAction" class="am.gitc.mportal.action.SearchAction">
+            <result name="success" type="tiles">search_page.view</result>
+        </action>
 
+        <action name="searchForm" class="am.gitc.mportal.action.SearchAction" method="subCategorySearch">
+
+        </action>
     </package>
-
 
 </struts>
