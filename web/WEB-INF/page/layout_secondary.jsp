@@ -11,6 +11,11 @@
 <head>
     <title><tiles:getAsString name="title"/></title>
     <tiles:insertAttribute name="import"/>
+    <script>
+        $(function () {
+            $( "#datepicker").datepicker();
+        })
+    </script>
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">

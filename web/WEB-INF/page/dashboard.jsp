@@ -29,34 +29,39 @@
                         <div class="media-body">
                             <%--username--%>
                             <p class="user-name">
+<<<<<<< HEAD
                                 <a href="#"><s:property value="user.name"/> <s:property value="user.surname"/></a></p>
                                 <hr/>
+=======
+                                <a href="#"><s:property value="user.name"/>  <s:property value="user.surname"/></a></p>
+                            <hr/>
+>>>>>>> 75d5562fcf1814c2b9c480040d12dc942d2446d5
                             <%--Country--%>
-                            <p class="user-info">
-                                <small>
-                                    <span class="glyphicon glyphicon-map-marker"></span> United States<br/>
-                                </small>
-                            </p>
-                            <p class="user-info">
-                                <small>
-                                    <span class="glyphicon glyphicon-book"></span> Java <br/>
-                                </small>
-                            </p>
-                            <p class="user-info">
-                                <small>
-                                    <span class="glyphicon glyphicon-star"></span> Junior <br/>
-                                </small>
-                            </p>
-                            <p class="user-info">
-                                <small>
-                                    <span class="glyphicon glyphicon-phone"></span> 098133996 <br/>
-                                </small>
-                            </p>
-                            <p class="user-info">
-                                <small>
-                                    <span class="glyphicon glyphicon-flag"></span> Armenian <br/>
-                                </small>
-                            </p>
+                            <%--<p class="user-info">--%>
+                                <%--<small>--%>
+                                    <%--<span class="glyphicon glyphicon-map-marker"></span> United States<br/>--%>
+                                <%--</small>--%>
+                            <%--</p>--%>
+                            <%--<p class="user-info">--%>
+                                <%--<small>--%>
+                                    <%--<span class="glyphicon glyphicon-book"></span> Java <br/>--%>
+                                <%--</small>--%>
+                            <%--</p>--%>
+                            <%--<p class="user-info">--%>
+                                <%--<small>--%>
+                                    <%--<span class="glyphicon glyphicon-star"></span> Junior <br/>--%>
+                                <%--</small>--%>
+                            <%--</p>--%>
+                            <%--<p class="user-info">--%>
+                                <%--<small>--%>
+                                    <%--<span class="glyphicon glyphicon-phone"></span> 098133996 <br/>--%>
+                                <%--</small>--%>
+                            <%--</p>--%>
+                            <%--<p class="user-info">--%>
+                                <%--<small>--%>
+                                    <%--<span class="glyphicon glyphicon-flag"></span> Armenian <br/>--%>
+                                <%--</small>--%>
+                            <%--</p>--%>
 
                         </div><!-- end .media-body -->
 
@@ -86,7 +91,7 @@
         <div class="col-xs-12">
             <div class="panel panel-default">
 
-                <div class="panel-heading "><span class="glyphicon glyphicon-envelope"></span>  My Conversations</div>
+                <div class="panel-heading "><span class="glyphicon glyphicon-envelope"></span> My Conversations</div>
                 <div class="panel-body">
                     <div class="alert alert-warning"><span class="glyphicon glyphicon-exclamation-sign"></span>
                         You haven't connected with any mentors yet. <a href="/people/search/mentors"

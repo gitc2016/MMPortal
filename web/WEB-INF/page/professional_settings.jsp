@@ -12,15 +12,11 @@
 
 <hr/>
 
+<div class="form-group ">
 <form id="" autocomplete="on" method="post">
 
 
-    <div class="form-group ">
         <s:textarea name="description" placeholder="Describe you" cssClass="form-control" />
-    </div>
-
-    <div class="form-group ">
-        <s:textfield name="expertise" placeholder="Expertise" cssClass="form-control"/>
     </div>
 
     <div class="form-group ">

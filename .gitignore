@@ -4,3 +4,4 @@ search.jsp
 #hibernate.cfg.xml
 .idea/
 src/main/webapp/
+out
