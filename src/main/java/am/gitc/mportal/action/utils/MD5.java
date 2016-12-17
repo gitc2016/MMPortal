@@ -13,6 +13,7 @@ public class MD5 {
 
 
     public static String encryptPassword(String str) {
+
         Properties prop = new Properties();
         InputStream input = null;
 
@@ -20,7 +21,6 @@ public class MD5 {
         try {
             input = MD5.class.getClassLoader().getResourceAsStream("config.properties");
             prop.load(input);
-            System.out.println();
             MessageDigest md = MessageDigest.getInstance(prop.getProperty("md5"));
             md.update(str.getBytes());
             byte[] bytes = md.digest();
@@ -40,6 +40,7 @@ public class MD5 {
                 e.printStackTrace();
             }
         }
+
         return generatedPassword;
     }
 

@@ -15,16 +15,17 @@
 
 <hr/>
 
-<form id="" autocomplete="on" method="post">
+
+<form  action="updateProfile.action" id="" autocomplete="on" method="post">
 
     <div class="col-md-6">
         <div class="form-group ">
-            <s:textfield name="firstName" placeholder="First name" cssClass="form-control" maxLength="50"/>
+            <s:textfield name="user.name" value="%{user.name}" placeholder="First name" cssClass="form-control" maxLength="50"/>
         </div>
     </div>
     <div class="col-md-6">
         <div class="form-group ">
-            <s:textfield name="lastName" placeholder="Last name" cssClass="form-control" maxLength="50"/>
+            <s:textfield name="user.surname" value="%{user.surname}" placeholder="Last name" cssClass="form-control" maxLength="50"/>
         </div>
     </div>
 
@@ -34,52 +35,29 @@
     </div>
 
     <div class="form-group ">
-        <s:textfield name="email" placeholder="Email" cssClass="form-control" maxLength="255"/>
+        <s:textfield name="user.email" value="%{user.email}" placeholder="Email" cssClass="form-control" maxLength="255"/>
     </div>
 
     <div class="form-group ">
-        <s:password name="password" placeholder="Password" cssClass="form-control"/>
+        <s:password name="user.password"  value="%{user.password}" placeholder="Current Password" cssClass="form-control"/>
     </div>
 
     <div class="form-group ">
-        <s:textfield name="confirmPassword" placeholder="Confirm Password" cssClass="form-control"/>
+        <s:textfield name="newPassword"  placeholder="New Password" cssClass="form-control"/>
     </div>
 
-
-        <div class="form-group ">
-            <s:textfield name="country"  placeholder="Country" cssClass="form-control" maxLength="50"/>
-        </div>
-
-
-        <div class="form-group ">
-            <s:textfield name="city" placeholder="City" cssClass="form-control" maxLength="50"/>
-        </div>
-
-
-        <div class="form-group ">
-            <s:textfield name="state" placeholder="State" cssClass="form-control" maxLength="50"/>
-        </div>
-
-        <div class="form-group ">
-            <s:textfield name="phone" placeholder="Phone number" cssClass="form-control" maxLength="50"/>
+    <div class="form-group ">
+        <s:textfield name="user.confirmPassword"  placeholder="Confirm Password" cssClass="form-control"/>
     </div>
 
-        <div class="form-group ">
-            <h4>Gender</h4>
-            <select>
-                <option>Male</option>
-                <option>Female</option>
-                <option>Other</option>
-            </select>
-        </div>
+    <s:select key="country"
+              list="%{#application.country}"
+              listKey="id"
+              listValue="name"
+              name="ids"/>
 
+    <s:textfield id="datepicker" key="birthDate" name="user.birthDate"/>
 
-        <div class="form-group ">
-            <h4>Languages</h4>
-            AM:<input type="checkbox">
-            RU:<input type="checkbox">
-            US:<input type="checkbox">
-        </div>
 
 
     <div class="submit">

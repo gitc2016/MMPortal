@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: levon
@@ -30,7 +31,6 @@
 
         <li><a href="">Mentors</a></li>
         <li><a href="">Mentee's</a></li>
-        <button>available</button>
 
     </ul>
 
@@ -42,16 +42,16 @@
             <a href="/my/dashboard" class="dropdown-toggle">
                 <img class="profile-pic pull-left" src="/images/MPLogo120.png"
                      alt="Levon Aloyan"/>
-                Levon <b class="caret"></b>
+                <s:property value="user.name"/> <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-                <li><a href="/my/profile">Profile & Settings</a></li>
-                <li><a href="/logout">Logout</a></li>
+                <li><a href="/getProfiles">Profile & Settings</a></li>
+                <li><a href="/logOut">Logout</a></li>
             </ul>
         </li>
 
-        <li class="visible-xs visible-sm"><a href="/my/profile">Profile & Settings</a></li>
-        <li class="visible-xs visible-sm"><a href="/logout">Logout</a></li>
+        <li class="visible-xs visible-sm"><a href="/getProfiles">Profile & Settings</a></li>
+        <li class="visible-xs visible-sm"><a href="/logOut">Logout</a></li>
 
     </ul>
 </div><!--/.navbar-collapse -->
