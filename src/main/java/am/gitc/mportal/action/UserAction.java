@@ -1,5 +1,6 @@
 package am.gitc.mportal.action;
 
+import am.gitc.mportal.dao.impl.CategoryDaoImpl;
 import am.gitc.mportal.dao.impl.FriendDaoImpl;
 import am.gitc.mportal.dao.impl.RequestDaoImpl;
 import am.gitc.mportal.dao.impl.UserDaoImpl;
@@ -24,12 +25,14 @@ public class UserAction extends GlobalAction {
     private int requestCount;
     private int friendId;
     private FriendDaoImpl friendDao;
+    private CategoryDaoImpl categoryDao;
 
 
     public UserAction() throws Exception {
         userDao = new UserDaoImpl();
         requestDao = new RequestDaoImpl();
         friendDao = new FriendDaoImpl();
+        categoryDao = new CategoryDaoImpl();
     }
 
 

@@ -222,6 +222,9 @@
             <result name="success" type="tiles">search_page.view</result>
         </action>
 
+        <action name="getManageProfile" class="am.gitc.mportal.action.UserAction">
+            <result name="success" type="tiles">professionalSettings.view</result>
+        </action>
         <action name="searchForm" class="am.gitc.mportal.action.SearchAction" method="subCategorySearch">
 
         </action>

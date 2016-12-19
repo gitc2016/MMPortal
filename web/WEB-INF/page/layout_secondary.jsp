@@ -12,10 +12,21 @@
     <title><tiles:getAsString name="title"/></title>
     <tiles:insertAttribute name="import"/>
     <script>
-        $(function () {
-            $( "#datepicker").datepicker();
+//        $(function () {
+//            $( "#datepicker").datepicker();
+//        })
+
+        $(document).ready(function () {
+            $("#parentCategory").change(function () {
+                var id=$("#parentCategory").val();
+                $(".categ").css("display","none");
+                $("#"+id).css("display","block");
+
+            })
         })
+
     </script>
+
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">

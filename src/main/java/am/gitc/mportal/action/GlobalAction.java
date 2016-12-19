@@ -59,7 +59,6 @@ public class GlobalAction extends ActionSupport implements SessionAware, Applica
     public String execute() throws Exception {
         // get countrylist and Genders list and add to application scope
         List<Country> countries = countryDaoImpl.getAll();
-
         mapApp.put(Global_Keys.COUNTRY, countries);
         mapApp.put(Global_Keys.STATUS, status);
         mapApp.put(Global_Keys.GENDER, genders);

@@ -70,7 +70,7 @@
                             <%--your information--%>
                         <p>About us</p>
                         </p>
-                        <a class="btn btn-tertiary btn-lg btn-block" href="/my/profile">Manage Profile &amp;
+                        <a class="btn btn-tertiary btn-lg btn-block" href="/getManageProfile">Manage Profile &amp;
                             Settings</a>
                     </div> <!-- end dashboard's .clearfix or footer_class or .affinity-bar -->
                 </div>
