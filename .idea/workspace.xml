@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e1a3d2d0-c1ab-430a-90ae-1e8514f3b5b2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources.xml" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/MPortal.iml" afterPath="$PROJECT_DIR$/MPortal.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/am/gitc/mportal/action/SearchAction.java" afterPath="$PROJECT_DIR$/src/main/java/am/gitc/mportal/action/SearchAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/struts.xml" afterPath="$PROJECT_DIR$/src/main/resources/struts.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/page/dashboard_layout.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/page/dashboard_layout.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/page/import.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/page/import.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/page/layout_secondary.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/page/layout_secondary.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/WEB-INF/page/search_page.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/page/search_page.jsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/js/common.js" afterPath="$PROJECT_DIR$/web/js/common.js" />
-    </list>
+    <list default="true" id="e1a3d2d0-c1ab-430a-90ae-1e8514f3b5b2" name="Default" comment="" />
     <ignored path="MPortal.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -1097,7 +1083,7 @@
       <workItem from="1482003323296" duration="1023000" />
       <workItem from="1482005024382" duration="589000" />
       <workItem from="1482132747621" duration="15252000" />
-      <workItem from="1482166255119" duration="32000" />
+      <workItem from="1482166255119" duration="154000" />
     </task>
     <task id="LOCAL-00001">
       <created>1481983091803</created>
@@ -1110,10 +1096,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46710000" />
+    <option name="totallyTimeSpent" value="46832000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
