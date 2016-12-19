@@ -12,18 +12,7 @@
     <title><tiles:getAsString name="title"/></title>
     <tiles:insertAttribute name="import"/>
     <script>
-        $(document).ready(function () {
-            $("#source").change(function () {
-                var category = $(this).val();
-                $.ajax({
-                    url:"searchForm",data:{category:category},
-                    success:function (data) {
-                        $("#status").html(data);
-                    }
 
-                });
-            });
-        });
 //        $(function () {
 //            $( "#datepicker").datepicker();
 //        })
