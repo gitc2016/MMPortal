@@ -10,9 +10,8 @@
 
 <div class="navbar-header">
     <img class="logo" src="/images/MPLogo120.png"  alt="">
-    <a class="navbar-brand" href="../index.html">
-        MPortal
-    </a>
+    <a class="navbar-brand" href="user.action">
+        MPortal </a>
 
     <button type="button" class="navbar-toggle " data-toggle="collapse" data-target=".navbar-collapse">
         <span class="icon-bar"></span>
@@ -25,12 +24,14 @@
         <li class="visible-xs visible-sm">
             <a href="/my/dashboard">
                 <img class="profile-pic pull-left" src="/images/MPLogo120.png"
-                     alt="Levon Aloyan"/>
-                Levon </a>
+                     alt=""/>
+                <s:property value="user.name"/> </a>
         </li>
 
-        <li><a href="">Mentors</a></li>
-        <li><a href="">Mentee's</a></li>
+
+        <li><a href="mentor.action">Mentors</a></li>
+        <li><a href="mentee.action">Mentee's</a></li>
+
 
     </ul>
 
@@ -41,7 +42,8 @@
         <li class="dropdown hidden-xs hidden-sm">
             <a href="/my/dashboard" class="dropdown-toggle">
                 <img class="profile-pic pull-left" src="/images/MPLogo120.png"
-                     alt="Levon Aloyan"/>
+                     alt=""/>
+
                 <s:property value="user.name"/> <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">

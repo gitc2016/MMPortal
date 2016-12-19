@@ -2,6 +2,7 @@ package am.gitc.mportal.dao.impl;
 
 import am.gitc.mportal.dao.UserDao;
 import am.gitc.mportal.domain.MentorCategory;
+import am.gitc.mportal.domain.Status;
 import am.gitc.mportal.domain.User;
 import am.gitc.mportal.util.HibernateUtil;
 import org.hibernate.Criteria;
@@ -72,13 +73,19 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public List<User> getSearchUserListByName(String name) {
+    public List<User> getUserByStatus(String status) {
+        Criteria criteria = session.createCriteria(User.class);
+        Criterion resualt = Restrictions.eq("status",Status.valueOf(status));
+        return (List<User>) criteria.add(resualt).list();
+    }
+
+    public List<User> getSearchUserListByName(String name,String status,int categoryId) {
         Criteria criteria = session.createCriteria(User.class);
         Criterion result = Restrictions.like("name", name + "%");
         return (List<User>) criteria.add(result).list();
-//        SQLQuery query = session.createSQLQuery
-//                ("SELECT us.`name` FROM mentor_category INNER JOIN `user` as us ON mentor_category.`user_id` = us.id where us.name LIKE '"+name+"%"+"'");
-//        return sqlQuery.list();
+
+//        return session.createCriteria(User.class).add(Restrictions.or(Restrictions.like("name",name+"%"),Restrictions.like("status",status)));
+
     }
 
     public User getUserByHashCode(String hashCode) throws Exception {//TODO think about better way to generate link for useractiovation
@@ -91,5 +98,8 @@ public class UserDaoImpl implements UserDao {
         return (User) session.createCriteria(User.class).add(Restrictions.and(Restrictions.eq("id", id), Restrictions.like("name", name + "%"))).uniqueResult();
     }
 
-
+    @Override
+    public List<User> getSearchUserListByName(String name) {
+        return null;
+    }
 }

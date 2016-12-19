@@ -2,6 +2,6 @@ target/
 .iml
 search.jsp
 #hibernate.cfg.xml
-#.idea/
+.idea/
 src/main/webapp/
 out

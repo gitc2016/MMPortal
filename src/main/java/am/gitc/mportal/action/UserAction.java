@@ -38,31 +38,6 @@ public class UserAction extends GlobalAction {
         return SUCCESS;
     }
 
-    public String mentor() throws Exception {
-
-//        requestList = new ArrayList<Request>();
-//        requestDbList = requestDao.getRequestListByAccepted();
-//        userList = new ArrayList<User>();
-//
-//        for (Request request : requestDbList) {
-//            if (request.getAcceptrID() == id) {
-//                requestCount++;
-//                requestList.add(request);
-//                senderUser = userDao.getById(request.getSenderID());
-//                userList.add(senderUser);
-//            }
-//        }
-        return SUCCESS;
-    }
-
-    public String friend() throws Exception {
-//        int id = (Integer) mapSession.get(Global_Keys.LOGIN);
-//        user = userDao.getById(id);
-
-
-        return SUCCESS;
-    }
-
     public int getFriendId() {
         return friendId;
     }

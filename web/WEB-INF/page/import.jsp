@@ -20,7 +20,6 @@
 <script src="http://code.jquery.com/jquery.js"></script>
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
-
 <link rel="stylesheet" type="text/css" href="../css/packed/cakedebugging_1426486041.css"/>
 <script type="text/javascript"
         src="../js/packed/jquery-succinctmin_commonmin_jqueryloadTemplate-141min_masonrymin_jquerydotdotdotmin_jqueryinfinitescroll_chosenjquerymin_bootstrapmin_tiny_mce-tiny_mce_1466033159.js"></script>

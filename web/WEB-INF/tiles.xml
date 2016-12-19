@@ -74,6 +74,12 @@
         <put-attribute name="content" value="/WEB-INF/page/messaging.jsp"/>
     </definition>
 
+    <definition name="search_page.view" extends="secondary.view">
+        <put-attribute name="title" value="Messaging"/>
+        <put-attribute name="content" value="/WEB-INF/page/search_page.jsp"/>
+    </definition>
+
+
 
 
 </tiles-definitions>

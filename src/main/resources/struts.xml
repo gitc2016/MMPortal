@@ -198,6 +198,10 @@
             <result name="success" type="tiles">dashboard.view</result>
         </action>
 
+        <action name="mentor" class="am.gitc.mportal.action.SearchAction" method="mentorSearch">
+            <result name="success" type="tiles">search_page.view</result>
+        </action>
+
         <action name="getProfiles" class="am.gitc.mportal.action.UserAction">
             <result name="success" type="tiles">profileSettings.view</result>
         </action>
@@ -210,7 +214,17 @@
             <result name="login" type="tiles">login.view</result>
         </action>
 
-    </package>
+        <action name="mentee" class="am.gitc.mportal.action.SearchAction" method="menteeSearch">
+            <result name="success" type="tiles">search_page.view</result>
+        </action>
 
+        <action name="searchAction" class="am.gitc.mportal.action.SearchAction">
+            <result name="success" type="tiles">search_page.view</result>
+        </action>
+
+        <action name="searchForm" class="am.gitc.mportal.action.SearchAction" method="subCategorySearch">
+
+        </action>
+    </package>
 
 </struts>
