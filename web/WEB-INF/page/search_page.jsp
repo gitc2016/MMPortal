@@ -7,21 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 
-<script>
-$(document).ready(function () {
-    $("#source").onclick(function () {
-    var category = $(this).val();
-        alert(category);
-    $ajax({
-        url:"searchForm",data:{category:category},
-        success:function (data) {
-            $("#status").html(data);
-        }
 
-    });
-    });
-});
-</script>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <s:set var="map" value="%{#application.category}"/>
 <s:if test="%{searchStatus}">
@@ -38,10 +24,10 @@ $(document).ready(function () {
                 <form action="searchAction">
 
                     <div class="col-sm-6 col-md-3">
-                        <select id="source" name="source" class="form-control" size="1" style="height:36px">
+                        <select id="source" name="source" class="form-control " size="1" style="height:36px">
                             <option value="">Category</option>
                             <s:iterator value="#map" var="mapsKey">
-                            <option value="key"><s:property value="key"/></option>
+                            <option value="<s:property value="key"/>"><s:property value="key"/></option>
                             </s:iterator>
                         </select>
                         <select name="status" id="status">

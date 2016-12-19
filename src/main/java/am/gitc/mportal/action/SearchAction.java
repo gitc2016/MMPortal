@@ -30,6 +30,9 @@ public class SearchAction extends GlobalAction implements ApplicationAware {
     private User user = new User();
     private List<User> userStatusList;
     private boolean searchStatus;
+    private String category;
+    private int categoryParentId;
+    private List<Category> categoryList;
 
     Map<String, Object> mapApp;
     Map<String, List<Category>> map;
@@ -40,6 +43,7 @@ public class SearchAction extends GlobalAction implements ApplicationAware {
             countryDaoImpl = new CountryDaoImpl();
             categoryDao = new CategoryDaoImpl();
             mentorCategory = new MentorCategoryImpl();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -49,7 +53,7 @@ public class SearchAction extends GlobalAction implements ApplicationAware {
     public String execute() throws Exception {
         int id = (Integer) mapSession.get(Global_Keys.LOGIN);
         user = userDao.getById(id);
-
+        System.out.println(category);
         userList = userDao.getSearchUserListByName(searchKeyword);
         if(userList.size()==0){
             addFieldError("searchKeyword","Nothing is find");
@@ -97,7 +101,10 @@ public class SearchAction extends GlobalAction implements ApplicationAware {
 
     @SkipValidation
     public String subCategorySearch()throws Exception{
-
+        Category categoryObj;
+        categoryObj = categoryDao.getParentId(category);
+    categoryParentId = categoryObj.getId();
+        categoryList = categoryDao.getSubCategory(categoryParentId);
         return SUCCESS;
     }
 
@@ -197,6 +204,22 @@ public class SearchAction extends GlobalAction implements ApplicationAware {
 
     public void setSearchStatus(boolean searchStatus) {
         this.searchStatus = searchStatus;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public List<Category> getCategoryList() {
+        return categoryList;
+    }
+
+    public void setCategoryList(List<Category> categoryList) {
+        this.categoryList = categoryList;
     }
 
     //endregion

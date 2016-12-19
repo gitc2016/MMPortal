@@ -11,6 +11,7 @@
 <head>
     <title><tiles:getAsString name="title"/></title>
     <tiles:insertAttribute name="import"/>
+
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">

@@ -222,9 +222,12 @@
             <result name="success" type="tiles">search_page.view</result>
         </action>
 
-        <action name="searchForm" class="am.gitc.mportal.action.SearchAction" method="subCategorySearch">
-
-        </action>
     </package>
-
+    <package name="defaultJson" namespace="/" extends="json-default">
+<action name="searchForm" class="am.gitc.mportal.action.SearchAction" method="subCategorySearch">
+    <result type="json"/>
+    <!--</result>-->
+    <!--<param name="includeProperties"/>-->
+</action>
+</package>
 </struts>
