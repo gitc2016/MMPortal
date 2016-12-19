@@ -9,7 +9,8 @@ import java.util.Properties;
 /**
  * Created by Stella on 25.11.2016.
  */
-public class MD5 {
+public class MD5 extends Thread{
+
 
 
     public static String encryptPassword(String str) {

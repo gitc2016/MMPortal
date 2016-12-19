@@ -23,6 +23,7 @@
             <s:textfield name="user.name" value="%{user.name}" placeholder="First name" cssClass="form-control" maxLength="50"/>
         </div>
     </div>
+
     <div class="col-md-6">
         <div class="form-group ">
             <s:textfield name="user.surname" value="%{user.surname}" placeholder="Last name" cssClass="form-control" maxLength="50"/>
@@ -39,22 +40,24 @@
     </div>
 
     <div class="form-group ">
-        <s:password name="user.password"  value="%{user.password}" placeholder="Current Password" cssClass="form-control"/>
+        <s:password name="user.password"   placeholder="Current Password" cssClass="form-control"/>
     </div>
 
     <div class="form-group ">
-        <s:textfield name="newPassword"  placeholder="New Password" cssClass="form-control"/>
+        <s:password name="newPassword"  placeholder="New Password" cssClass="form-control"/>
     </div>
 
     <div class="form-group ">
-        <s:textfield name="user.confirmPassword"  placeholder="Confirm Password" cssClass="form-control"/>
+        <s:password name="user.confirmPassword"  placeholder="Confirm Password" cssClass="form-control"/>
     </div>
 
     <s:select key="country"
               list="%{#application.country}"
+              headerKey="0"
+              headerValue="-----"
               listKey="id"
               listValue="name"
-              name="ids"/>
+              name="countryId"/>
 
     <s:textfield id="datepicker" key="birthDate" name="user.birthDate"/>
 

@@ -1,0 +1,12 @@
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .gitignore	(date 1482139215000)
++++ .gitignore	(revision )
+@@ -5,3 +5,4 @@
+ .idea/
+ src/main/webapp/
+ out
++classes/

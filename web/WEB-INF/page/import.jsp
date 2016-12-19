@@ -16,6 +16,8 @@
 
 <link href="../favicon.ico" type="icon" rel="icon"/>
 <link href="../favicon.ico" type="icon" rel="shortcut icon"/>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+
 <!-- jQuery (necessary for Bootstrap JavaScript plugins) -->
 <script src="http://code.jquery.com/jquery.js"></script>
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
