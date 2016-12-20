@@ -214,11 +214,13 @@
             <result name="login" type="tiles">login.view</result>
         </action>
 
-        <action name="mentee" class="am.gitc.mportal.action.SearchAction" method="menteeSearch">
+        <action name="searchAct" class="am.gitc.mportal.action.SearchAction">
             <result name="success" type="tiles">search_page.view</result>
         </action>
 
-        <action name="searchAction" class="am.gitc.mportal.action.SearchAction">
+
+
+        <action name="mentee" class="am.gitc.mportal.action.SearchAction" method="menteeSearch">
             <result name="success" type="tiles">search_page.view</result>
         </action>
 

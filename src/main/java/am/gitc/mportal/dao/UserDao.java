@@ -27,10 +27,6 @@ public interface UserDao extends GlobalDao<User> {
 
     User getUserByEmailPassword(String email, String password) throws Exception;
 
-    List<User> getSearchUserListByName(String name);
-
-    User getUserAdvanceSearch(int id, String name);
-
     List<User> getUserByStatus(String status);
 
     @Override

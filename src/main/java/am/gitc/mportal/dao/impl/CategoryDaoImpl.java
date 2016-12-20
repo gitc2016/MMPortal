@@ -25,13 +25,6 @@ public class CategoryDaoImpl implements CategoryDao {
         return criteria.add(result).list();
     }
 
-
-    public Category getParentId(String name) {
-        Criteria criteria = session.createCriteria(Category.class);
-        Criterion result = Restrictions.eq("name", name);
-        return (Category) criteria.add(result).uniqueResult();
-    }
-
     public List<Category> getSubCategory(int id){
         Criteria criteria = session.createCriteria(Category.class);
         Criterion result = Restrictions.eq("parentId", id);

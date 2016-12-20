@@ -4,10 +4,8 @@ import am.gitc.mportal.dao.impl.CategoryDaoImpl;
 import am.gitc.mportal.dao.impl.CountryDaoImpl;
 import am.gitc.mportal.dao.impl.MentorCategoryImpl;
 import am.gitc.mportal.dao.impl.UserDaoImpl;
-import am.gitc.mportal.domain.Category;
 import am.gitc.mportal.domain.Status;
 import am.gitc.mportal.domain.User;
-import am.gitc.mportal.util.Global_Keys;
 import org.apache.struts2.interceptor.ApplicationAware;
 import org.apache.struts2.interceptor.validation.SkipValidation;
 
@@ -18,24 +16,19 @@ import java.util.Map;
 public class SearchAction extends GlobalAction implements ApplicationAware {
 //region fields
     private UserDaoImpl userDao;
-    private String searchKeyword;
+
     private List<User> userList;
     private CountryDaoImpl countryDaoImpl;
     private int countryId;
     private CategoryDaoImpl categoryDao;
     private MentorCategoryImpl mentorCategory;
-    private int categoryId;
+    private String searchKeyword;
     private String userName;
     private List<User> searchList;
     private User user = new User();
     private List<User> userStatusList;
     private boolean searchStatus;
-    private String category;
-    private int categoryParentId;
-    private List<Category> categoryList;
 
-    Map<String, Object> mapApp;
-    Map<String, List<Category>> map;
     //endregion
     public SearchAction() throws Exception{
         try {
@@ -51,13 +44,7 @@ public class SearchAction extends GlobalAction implements ApplicationAware {
 
     @Override
     public String execute() throws Exception {
-        int id = (Integer) mapSession.get(Global_Keys.LOGIN);
-        user = userDao.getById(id);
-        System.out.println(category);
-        userList = userDao.getSearchUserListByName(searchKeyword);
-        if(userList.size()==0){
-            addFieldError("searchKeyword","Nothing is find");
-        }
+        System.out.println(searchKeyword);
         return SUCCESS;
     }
 
@@ -99,49 +86,13 @@ public class SearchAction extends GlobalAction implements ApplicationAware {
         return SUCCESS;
     }
 
-    @SkipValidation
-    public String subCategorySearch()throws Exception{
-        Category categoryObj;
-        categoryObj = categoryDao.getParentId(category);
-    categoryParentId = categoryObj.getId();
-        categoryList = categoryDao.getSubCategory(categoryParentId);
-        return SUCCESS;
-    }
 
-    @SkipValidation
-    public String advancedSearch() throws Exception{
-        int sessionUserId = (Integer) mapSession.get(Global_Keys.LOGIN);
-        searchList = new ArrayList<User>();
-        List<Integer> userIdList = mentorCategory.getUserIdByCategoryId(categoryId);
-        for (int userId : userIdList) {
-            User userObj=null;
-            if (userName == null) {
-                userObj = userDao.getUserAdvanceSearch(userId, "");
-            } else if (userName != null) {
-                userObj = userDao.getUserAdvanceSearch(userId, userName);
-            }
-            if (sessionUserId != userId) {
-                searchList.add(userObj);
-            }
-        }
-        if(searchList.size()==0){
-            addFieldError("searchKeyword","Nothing is find");
-        }
-        return SUCCESS;
-    }
 
     @Override
     public void setApplication(Map<String, Object> map) {
         mapApp = map;
     }
 //region geter And seter
-    public String getSearchKeyword() {
-        return searchKeyword;
-    }
-
-    public void setSearchKeyword(String searchKeyword) {
-        this.searchKeyword = searchKeyword;
-    }
 
     public List<User> getUserList() {
         return userList;
@@ -157,14 +108,6 @@ public class SearchAction extends GlobalAction implements ApplicationAware {
 
     public void setCountryId(int countryId) {
         this.countryId = countryId;
-    }
-
-    public int getCategoryId() {
-        return categoryId;
-    }
-
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
     }
 
     public String getUserName() {
@@ -206,20 +149,12 @@ public class SearchAction extends GlobalAction implements ApplicationAware {
         this.searchStatus = searchStatus;
     }
 
-    public String getCategory() {
-        return category;
+    public String getSearchKeyword() {
+        return searchKeyword;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
-    }
-
-    public List<Category> getCategoryList() {
-        return categoryList;
-    }
-
-    public void setCategoryList(List<Category> categoryList) {
-        this.categoryList = categoryList;
+    public void setSearchKeyword(String searchKeyword) {
+        this.searchKeyword = searchKeyword;
     }
 
     //endregion

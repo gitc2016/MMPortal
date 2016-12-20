@@ -80,26 +80,17 @@ public class UserDaoImpl implements UserDao {
     }
 
     public List<User> getSearchUserListByName(String name,String status,int categoryId) {
-        Criteria criteria = session.createCriteria(User.class);
-        Criterion result = Restrictions.like("name", name + "%");
-        return (List<User>) criteria.add(result).list();
+//        Criteria criteria = session.createCriteria(User.class);
+//        Criterion result = Restrictions.like("name", name + "%");
+//        return (List<User>) criteria.add(result).list();
 
-//        return session.createCriteria(User.class).add(Restrictions.or(Restrictions.like("name",name+"%"),Restrictions.like("status",status)));
+        return (List<User>) session.createCriteria(User.class).add(Restrictions.or(Restrictions.like("name",name+"%"),
+                Restrictions.eq("status",status),Restrictions.eq("categoryId",categoryId)));
 
     }
 
     public User getUserByHashCode(String hashCode) throws Exception {//TODO think about better way to generate link for useractiovation
         Criteria criteria = session.createCriteria(User.class);
         return (User) criteria.add(Restrictions.eq("hashCode", hashCode)).uniqueResult();
-    }
-
-    @Override
-    public User getUserAdvanceSearch(int id, String name) {
-        return (User) session.createCriteria(User.class).add(Restrictions.and(Restrictions.eq("id", id), Restrictions.like("name", name + "%"))).uniqueResult();
-    }
-
-    @Override
-    public List<User> getSearchUserListByName(String name) {
-        return null;
     }
 }
