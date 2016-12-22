@@ -329,3 +329,4 @@ CREATE TABLE `user_detalis` (
     INSERT INTO `country`(name) VALUES ('Zaire');
     INSERT INTO `country`(name) VALUES ('Zambia');
     INSERT INTO `country`(name) VALUES ('Zimbabwe');
+-- lenakhrkhryan@mail.ru

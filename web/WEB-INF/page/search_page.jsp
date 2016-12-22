@@ -29,26 +29,35 @@
                             <option value="<s:property value="key"/>"><s:property value="key"/></option>
                         </s:iterator>
                     </select>
-                    <form action="searchAct">
-                        <s:iterator value="#map" var="parent">
-                        <s:iterator value="key">
-                        <select id="<s:property value="key"/>" class="categ form-control" size="1"name="categoryId"
-                                style="height:36px;width: 200px ;display: none">
-                            <option value="">subCategory</option>
-                            <s:iterator value="value" var="subcateg">
-                                <option value="#subcateg.id">
-                                    <s:property value="#subcateg.name"/>
-                                </option>
+                    <form id="formSkill" autocomplete="on" method="post"/>
+                        <%--<s:iterator value="#map" var="parent">--%>
+                        <%--<s:iterator value="key">--%>
+                        <%--<select id="<s:property value="key"/>" class="categ form-control" size="1"--%>
+                                <%--style="height:36px;width: 200px ;display: none">--%>
+                            <%--<option value="">subCategory</option>--%>
+                            <%--<s:iterator value="value" var="subcateg">--%>
+                                <%--<option value="#subcateg.id" id="subCategoryId">--%>
+                                    <%--<s:property value="#subcateg.name"/>--%>
+                                <%--</option>--%>
+                            <%--</s:iterator>--%>
+                        <%--</select>--%>
+                        <%--</s:iterator>--%>
+                        <%--</s:iterator>--%>
+                            <s:iterator value="#map" var="parent">
+                            <s:iterator value="key">
+                                <s:set value="key" var="k"/>
+                                <s:select list="value" id="%{#k}" style="height:36px;width: 200px ;display: none"
+                                          cssClass="categ form-control" size="1" name="%{#k}" listKey="id" listValue="name" headerKey="0"
+                                          headerValue="-----"/>
                             </s:iterator>
-                        </select>
-                        </s:iterator>
-                        </s:iterator>
+                            </s:iterator>
                 </div>
                 <div class="col-sm-6 col-md-3">
                     <s:textfield name="searchKeyword" placeholder="Mentor name"/>
                 </div>
                 <div class="col-sm-3 col-md-2">
-                    <div class="submit"><input id="submit-less-options" class="btn btn-primary btn-block" type="submit" value="Filter Results"/>
+                    <div class="submit">
+                        <input id="submit-less-options" class="btn btn-primary btn-block" type="submit" value="Filter Results"  onclick="setAction()"/>
                     </div>
                 </div>
                 </form>

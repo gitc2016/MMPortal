@@ -1,6 +1,8 @@
 package am.gitc.mportal.domain;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Gtc-user17 on 11/13/2016.
@@ -15,8 +17,11 @@ public class Category {
     private int id;
 
     private String name;
-@Column(name = "parent_id")
+    @Column(name = "parent_id")
     private int parentId;
+
+    @ManyToMany(mappedBy = "categoryList")
+    private List<User> userList = new ArrayList<User>();
 
     public Category() {
 
@@ -47,26 +52,12 @@ public class Category {
         this.parentId = parentId;
     }
 
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-
-        Category category = (Category) o;
-
-        if (id != category.id) return false;
-        if (parentId != category.parentId) return false;
-        return name != null ? name.equals(category.name) : category.name == null;
-
+    public List<User> getUserList() {
+        return userList;
     }
 
-    @Override
-    public int hashCode() {
-        int result = id;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + parentId;
-        return result;
+    public void setUserList(List<User> userList) {
+        this.userList = userList;
     }
 
     @Override
@@ -76,5 +67,28 @@ public class Category {
                 ", name='" + name + '\'' +
                 ", parentId=" + parentId +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Category)) return false;
+
+        Category category = (Category) o;
+
+        if (getId() != category.getId()) return false;
+        if (getParentId() != category.getParentId()) return false;
+        if (getName() != null ? !getName().equals(category.getName()) : category.getName() != null) return false;
+        return getUserList() != null ? getUserList().equals(category.getUserList()) : category.getUserList() == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getId();
+        result = 31 * result + (getName() != null ? getName().hashCode() : 0);
+        result = 31 * result + getParentId();
+        result = 31 * result + (getUserList() != null ? getUserList().hashCode() : 0);
+        return result;
     }
 }

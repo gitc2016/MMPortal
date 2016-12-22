@@ -1,7 +1,6 @@
 package am.gitc.mportal.action;
 
 import am.gitc.mportal.dao.impl.CategoryDaoImpl;
-import am.gitc.mportal.dao.impl.CountryDaoImpl;
 import am.gitc.mportal.dao.impl.MentorCategoryImpl;
 import am.gitc.mportal.dao.impl.UserDaoImpl;
 import am.gitc.mportal.domain.Status;
@@ -18,7 +17,6 @@ public class SearchAction extends GlobalAction implements ApplicationAware {
     private UserDaoImpl userDao;
 
     private List<User> userList;
-    private CountryDaoImpl countryDaoImpl;
     private int countryId;
     private CategoryDaoImpl categoryDao;
     private MentorCategoryImpl mentorCategory;
@@ -28,12 +26,12 @@ public class SearchAction extends GlobalAction implements ApplicationAware {
     private User user = new User();
     private List<User> userStatusList;
     private boolean searchStatus;
+    private int categoryId;
 
     //endregion
     public SearchAction() throws Exception{
         try {
             userDao = new UserDaoImpl();
-            countryDaoImpl = new CountryDaoImpl();
             categoryDao = new CategoryDaoImpl();
             mentorCategory = new MentorCategoryImpl();
 
@@ -44,7 +42,12 @@ public class SearchAction extends GlobalAction implements ApplicationAware {
 
     @Override
     public String execute() throws Exception {
-        System.out.println(searchKeyword);
+        return SUCCESS;
+    }
+
+
+    public String advancedSearch(){
+
         return SUCCESS;
     }
 
@@ -155,6 +158,14 @@ public class SearchAction extends GlobalAction implements ApplicationAware {
 
     public void setSearchKeyword(String searchKeyword) {
         this.searchKeyword = searchKeyword;
+    }
+
+    public int getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
     }
 
     //endregion

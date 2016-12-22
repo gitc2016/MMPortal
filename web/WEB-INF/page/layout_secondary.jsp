@@ -16,17 +16,23 @@
 //        $(function () {
 //            $( "#datepicker").datepicker();
 //        })
-
-
-
         $(document).ready(function () {
             $("#parentCategory").change(function () {
                 var id=$("#parentCategory").val();
                 $(".categ").css("display","none");
                 $("#"+id).css("display","block");
-
-            })
+            });
         })
+function setAction(){
+    var id = '';
+    $('.categ').each(function(){
+        if($(this).css('display') == 'block'){
+            id = $(this).val();
+        }
+    })
+    $('#formSkill').attr('action','/searchAct.action?categoryId='+id).submit();
+}
+
 
     </script>
 

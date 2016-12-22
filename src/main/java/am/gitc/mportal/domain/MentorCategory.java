@@ -14,13 +14,11 @@ public class MentorCategory {
     private int id;
     @JoinColumn(name = "user")
     @Column(name = "user_id")
-    private int userId;
+//    private int userId;
+    private List<User> userList;
     @Column(name = "category_id")
-    private int categoryId;
-    @Column(name = "description")
-    private String about;
-    @Column(name = "image_url")
-    private String imgUrl;
+//    private int categoryId;
+    private List<Category> categoryList;
 
     public int getId() {
         return id;
@@ -30,46 +28,45 @@ public class MentorCategory {
         this.id = id;
     }
 
-    public int getUserId() {
-        return userId;
+//    public int getUserId() {
+//        return userId;
+//    }
+//
+//    public void setUserId(int userId) {
+//        this.userId = userId;
+//    }
+//
+//    public int getCategoryId() {
+//        return categoryId;
+//    }
+//
+//    public void setCategoryId(int categoryId) {
+//        this.categoryId = categoryId;
+//    }
+
+
+    public List<User> getUserList() {
+        return userList;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public void setUserList(List<User> userList) {
+        this.userList = userList;
     }
 
-    public int getCategoryId() {
-        return categoryId;
+    public List<Category> getCategoryList() {
+        return categoryList;
     }
 
-    public void setCategoryId(int categoryId) {
-        this.categoryId = categoryId;
-    }
-
-    public String getAbout() {
-        return about;
-    }
-
-    public void setAbout(String about) {
-        this.about = about;
-    }
-
-    public String getImgUrl() {
-        return imgUrl;
-    }
-
-    public void setImgUrl(String imgUrl) {
-        this.imgUrl = imgUrl;
+    public void setCategoryList(List<Category> categoryList) {
+        this.categoryList = categoryList;
     }
 
     @Override
     public String toString() {
         return "MentorCategory{" +
                 "id=" + id +
-                ", userId=" + userId +
-                ", categoryId=" + categoryId +
-                ", about='" + about + '\'' +
-                ", imgUrl='" + imgUrl + '\'' +
+                ", userList=" + userList +
+                ", categoryList=" + categoryList +
                 '}';
     }
 
@@ -81,20 +78,17 @@ public class MentorCategory {
         MentorCategory that = (MentorCategory) o;
 
         if (getId() != that.getId()) return false;
-        if (getUserId() != that.getUserId()) return false;
-        if (getCategoryId() != that.getCategoryId()) return false;
-        if (getAbout() != null ? !getAbout().equals(that.getAbout()) : that.getAbout() != null) return false;
-        return getImgUrl() != null ? getImgUrl().equals(that.getImgUrl()) : that.getImgUrl() == null;
+        if (getUserList() != null ? !getUserList().equals(that.getUserList()) : that.getUserList() != null)
+            return false;
+        return getCategoryList() != null ? getCategoryList().equals(that.getCategoryList()) : that.getCategoryList() == null;
 
     }
 
     @Override
     public int hashCode() {
         int result = getId();
-        result = 31 * result + getUserId();
-        result = 31 * result + getCategoryId();
-        result = 31 * result + (getAbout() != null ? getAbout().hashCode() : 0);
-        result = 31 * result + (getImgUrl() != null ? getImgUrl().hashCode() : 0);
+        result = 31 * result + (getUserList() != null ? getUserList().hashCode() : 0);
+        result = 31 * result + (getCategoryList() != null ? getCategoryList().hashCode() : 0);
         return result;
     }
 }

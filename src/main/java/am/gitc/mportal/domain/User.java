@@ -1,7 +1,9 @@
 package am.gitc.mportal.domain;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by Gtc-user17 on 11/13/2016.
@@ -44,6 +46,13 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     private Status status;
+
+    @ManyToMany
+    @JoinTable(name = "mentor_category",
+    joinColumns = {@JoinColumn(name = "user_id")},
+            inverseJoinColumns = {@JoinColumn(name = "category_id")})
+
+    private List<Category> categoryList= new ArrayList<Category>();
 
     public User() {
 
@@ -161,6 +170,14 @@ public class User {
         this.status = status;
     }
 
+    public List<Category> getCategoryList() {
+        return categoryList;
+    }
+
+    public void setCategoryList(List<Category> categoryList) {
+        this.categoryList = categoryList;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -169,7 +186,6 @@ public class User {
                 ", surname='" + surname + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
-                ", confirmPassword='" + confirmPassword + '\'' +
                 ", imageSRC='" + imageSRC + '\'' +
                 ", gender=" + gender +
                 ", country=" + country +
@@ -177,48 +193,57 @@ public class User {
                 ", isAvailable=" + isAvailable +
                 ", isActive=" + isActive +
                 ", hashCode='" + hashCode + '\'' +
+                ", status=" + status +
                 '}';
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!(o instanceof User)) return false;
 
         User user = (User) o;
 
-        if (id != user.id) return false;
-        if (isAvailable != user.isAvailable) return false;
-        if (isActive != user.isActive) return false;
-        if (name != null ? !name.equals(user.name) : user.name != null) return false;
-        if (surname != null ? !surname.equals(user.surname) : user.surname != null) return false;
-        if (email != null ? !email.equals(user.email) : user.email != null) return false;
-        if (password != null ? !password.equals(user.password) : user.password != null) return false;
-        if (confirmPassword != null ? !confirmPassword.equals(user.confirmPassword) : user.confirmPassword != null)
+        if (getId() != user.getId()) return false;
+        if (isAvailable() != user.isAvailable()) return false;
+        if (isActive() != user.isActive()) return false;
+        if (getName() != null ? !getName().equals(user.getName()) : user.getName() != null) return false;
+        if (getSurname() != null ? !getSurname().equals(user.getSurname()) : user.getSurname() != null) return false;
+        if (getEmail() != null ? !getEmail().equals(user.getEmail()) : user.getEmail() != null) return false;
+        if (getPassword() != null ? !getPassword().equals(user.getPassword()) : user.getPassword() != null)
             return false;
-        if (imageSRC != null ? !imageSRC.equals(user.imageSRC) : user.imageSRC != null) return false;
-        if (gender != user.gender) return false;
-        if (country != null ? !country.equals(user.country) : user.country != null) return false;
-        if (birthDate != null ? !birthDate.equals(user.birthDate) : user.birthDate != null) return false;
-        return hashCode != null ? hashCode.equals(user.hashCode) : user.hashCode == null;
+        if (getConfirmPassword() != null ? !getConfirmPassword().equals(user.getConfirmPassword()) : user.getConfirmPassword() != null)
+            return false;
+        if (getImageSRC() != null ? !getImageSRC().equals(user.getImageSRC()) : user.getImageSRC() != null)
+            return false;
+        if (getGender() != user.getGender()) return false;
+        if (getCountry() != null ? !getCountry().equals(user.getCountry()) : user.getCountry() != null) return false;
+        if (getBirthDate() != null ? !getBirthDate().equals(user.getBirthDate()) : user.getBirthDate() != null)
+            return false;
+        if (getHashCode() != null ? !getHashCode().equals(user.getHashCode()) : user.getHashCode() != null)
+            return false;
+        if (getStatus() != user.getStatus()) return false;
+        return getCategoryList() != null ? getCategoryList().equals(user.getCategoryList()) : user.getCategoryList() == null;
 
     }
 
     @Override
     public int hashCode() {
-        int result = id;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        result = 31 * result + (surname != null ? surname.hashCode() : 0);
-        result = 31 * result + (email != null ? email.hashCode() : 0);
-        result = 31 * result + (password != null ? password.hashCode() : 0);
-        result = 31 * result + (confirmPassword != null ? confirmPassword.hashCode() : 0);
-        result = 31 * result + (imageSRC != null ? imageSRC.hashCode() : 0);
-        result = 31 * result + (gender != null ? gender.hashCode() : 0);
-        result = 31 * result + (country != null ? country.hashCode() : 0);
-        result = 31 * result + (birthDate != null ? birthDate.hashCode() : 0);
-        result = 31 * result + (isAvailable ? 1 : 0);
-        result = 31 * result + (isActive ? 1 : 0);
-        result = 31 * result + (hashCode != null ? hashCode.hashCode() : 0);
+        int result = getId();
+        result = 31 * result + (getName() != null ? getName().hashCode() : 0);
+        result = 31 * result + (getSurname() != null ? getSurname().hashCode() : 0);
+        result = 31 * result + (getEmail() != null ? getEmail().hashCode() : 0);
+        result = 31 * result + (getPassword() != null ? getPassword().hashCode() : 0);
+        result = 31 * result + (getConfirmPassword() != null ? getConfirmPassword().hashCode() : 0);
+        result = 31 * result + (getImageSRC() != null ? getImageSRC().hashCode() : 0);
+        result = 31 * result + (getGender() != null ? getGender().hashCode() : 0);
+        result = 31 * result + (getCountry() != null ? getCountry().hashCode() : 0);
+        result = 31 * result + (getBirthDate() != null ? getBirthDate().hashCode() : 0);
+        result = 31 * result + (isAvailable() ? 1 : 0);
+        result = 31 * result + (isActive() ? 1 : 0);
+        result = 31 * result + (getHashCode() != null ? getHashCode().hashCode() : 0);
+        result = 31 * result + (getStatus() != null ? getStatus().hashCode() : 0);
+        result = 31 * result + (getCategoryList() != null ? getCategoryList().hashCode() : 0);
         return result;
     }
 }

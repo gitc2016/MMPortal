@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="MySQL - MPortalDB@localhost" uuid="0cdf208f-2cea-4c5c-82b3-061f829230a4">
+    <data-source source="LOCAL" name="MySQL - mportaldb@localhost" uuid="0cdf208f-2cea-4c5c-82b3-061f829230a4">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
-      <jdbc-url>jdbc:mysql://localhost:3306/MPortalDB</jdbc-url>
+      <jdbc-url>jdbc:mysql://localhost:3306/mportaldb</jdbc-url>
       <driver-properties>
         <property name="autoReconnect" value="true" />
         <property name="zeroDateTimeBehavior" value="convertToNull" />

@@ -2,13 +2,9 @@ package am.gitc.mportal.action;
 
 import am.gitc.mportal.dao.impl.CategoryDaoImpl;
 import am.gitc.mportal.dao.impl.FriendDaoImpl;
-import am.gitc.mportal.dao.impl.RequestDaoImpl;
 import am.gitc.mportal.dao.impl.UserDaoImpl;
-import am.gitc.mportal.domain.Request;
 import am.gitc.mportal.domain.User;
-import am.gitc.mportal.util.Global_Keys;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -18,9 +14,6 @@ public class UserAction extends GlobalAction {
 
     private User senderUser = new User();
     private UserDaoImpl userDao;
-    private List<Request> requestDbList;
-    private RequestDaoImpl requestDao;
-    private List<Request> requestList;
     private List<User> userList;
     private int requestCount;
     private int friendId;
@@ -30,7 +23,6 @@ public class UserAction extends GlobalAction {
 
     public UserAction() throws Exception {
         userDao = new UserDaoImpl();
-        requestDao = new RequestDaoImpl();
         friendDao = new FriendDaoImpl();
         categoryDao = new CategoryDaoImpl();
     }
@@ -63,14 +55,6 @@ public class UserAction extends GlobalAction {
 
     public void setSenderUser(User senderUser) {
         this.senderUser = senderUser;
-    }
-
-    public List<Request> getRequestList() {
-        return requestList;
-    }
-
-    public void setRequestList(List<Request> requestList) {
-        this.requestList = requestList;
     }
 
     public int getRequestCount() {
